@@ -13,7 +13,7 @@ void student::assignmentview()
     if(myfile.is_open()){
         while(getline(myfile,reader))
         {
-            cout<<reader<<'\n';
+            cout<<"\n"<<reader<<'\n';
         }
         myfile.close();
     }
@@ -38,11 +38,12 @@ void student::marksview()
     cout<<"enter your name"<<endl;
     getline(cin.ignore(),c);
     ifstream myfile;
-    myfile.open("marks.ods");
+    myfile.open("marks.txt");
    while(myfile>>name)
    {
        if(name.compare(c)==0)
-       {cout<<"roll number:"<<name<<endl;
+       {
+           cout<<"roll number:"<<name<<endl;
            myfile>>name;
            cout<<"name:"<<name<<endl;
            myfile>>name;
@@ -53,11 +54,14 @@ void student::marksview()
            cout<<"de marks:"<<name<<endl;
            myfile>>name;
            cout<<"total:"<<name<<endl;
-
-
+        }
+       else {cout<<"your name is not in database \n";
+       break;
        }
-       else cout<<"your name is not in database";
-   }myfile.close();
+   }
+         
+
+   myfile.close();
    cout<<"*****************************************************************************\n";
    cout<<"*                 if you wish to continue press y!                           \n";
         cin>>more;
@@ -79,7 +83,7 @@ void student::passwordvalidate()
     cin>>name;
     cout<<"please enter your password"<<endl;
     cin>>password;
-    if(password=="p")
+    if(password=="*")
     {   
         cout<<"press 1 to view assignment"<<endl;
         cout<<"press 2 to view your marks"<<endl;

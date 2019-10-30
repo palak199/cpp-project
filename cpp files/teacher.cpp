@@ -12,7 +12,21 @@ void teacher::assignmentadd(){
 cout<<"enter the assignment content- \n" ;
 getline(cin.ignore(),reader);
 writer<<reader;
+cout<<"\n";
+writer<<"\n-------------------------------------------------";
+cout<<"\n";
 writer.close();
+cout<<"if you wish to continue press y!";
+        cin>>more;
+        if(more=="y")
+        Tobject.passwordvalidate();
+        else {
+            cout<<"                   ----------------------\n";
+            cout<<"                   |thankyou visit again|\n";
+            cout<<"                   ----------------------\n";
+        }
+
+
 }
 void teacher::studentadd(){
     fstream writer;
@@ -27,7 +41,7 @@ void teacher::studentadd(){
     getline(cin,father_name);
     cout<<"enter e-mail: ";
     getline(cin,email);
-    writer<<roll_no<<"  "<<name<<"      "<<father_name<<"           "<<email<<"\n";}
+    writer<<roll_no<<"      "<<name<<"      "<<father_name<<"       "<<email<<"\n";}
     writer.close();
     cout<<"if you wish to continue press y!";
         cin>>more;
@@ -45,11 +59,12 @@ void teacher::marksadd()
     float oops,cn,de;
     int roll;
     string name;
-    fstream markswriter;
+    ofstream markswriter;
     markswriter.open("marks.txt",fstream::in | fstream::out | fstream::app);
     cout<<"enter roll number: ";
     cin>>roll;
     cout<<"enter name: ";
+
     getline(cin.ignore(),name);
     cout<<"please enter marks in OOPS: ";
     cin>>oops;
@@ -77,7 +92,8 @@ void teacher::passwordvalidate(){
     cout<<"*           password please: ";
     cin>>password;
     cout<<"\n**************************************************************\n";
-    if(password=="don"){
+    if(password=="t"){
+        cout<<"\n";
         cout<<"*           if you wish to enter a new student press 1:    *\n";
         cout<<"*           for new assignment press 2:                    *\n";
         cout<<"*           for entering marks press 3:                    *\n";

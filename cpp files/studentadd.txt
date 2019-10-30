@@ -1,1 +1,5 @@
-roll number     name            father's name           e-mail
+roll number     name        father's name       e-mail
+
+1      prakhar      rajeev lochan       prakharv@gmail.com
+10      saloni goyal      sanjeev goyal       salonig1212@gmail.com
+4      palak      pardeep thapar       p.thapar99@gmail.com

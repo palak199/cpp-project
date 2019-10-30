@@ -1,6 +1,0 @@
-assignment-1
-1. what is encapsulation?
-2. what is array of objects?
-
-
--to be submitted by 20-11-2019
